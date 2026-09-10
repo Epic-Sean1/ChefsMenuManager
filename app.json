@@ -1,14 +1,14 @@
 {
   "expo": {
     "name": "ChefsMenuManager",
-    "slug": "ChefsMenuManager",
+    "slug": "chefsmenumanager",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "chefsmenumanager",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/images/icon.png"
     },
     "android": {
       "adaptiveIcon": {
