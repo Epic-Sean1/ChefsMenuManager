@@ -85,4 +85,4 @@ Part 2 — Initial Application
 - Implemented the initial menu management interface.
 - Added the ability to create and display menu items.
 - Added the ability to remove menu items.
-- Implemented basic input validation.s
+- Implemented basic input validation.

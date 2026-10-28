@@ -1,14 +1,15 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import {
-  View,
+  Alert,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  ScrollView,
-  StyleSheet,
-  Alert,
-  StatusBar,
+  View,
 } from 'react-native';
+import MenuItemCard from '../components/MenuItemCard';
 
 type Course = 'Starter' | 'Main Course' | 'Dessert';
 type CourseFilter = 'All' | Course;
@@ -536,58 +537,12 @@ export default function App() {
           </View>
         ) : (
           filteredItems.map((item) => (
-            <View style={styles.dishCard} key={item.id}>
-              <View style={styles.dishTop}>
-                <View style={styles.dishHeading}>
-                  <Text style={styles.dishName}>
-                    {item.name}
-                  </Text>
-
-                  <Text style={styles.courseBadge}>
-                    {item.course}
-                  </Text>
-                </View>
-
-                <Text style={styles.price}>
-                  {formatRand(Number(item.price))}
-                </Text>
-              </View>
-
-              <Text style={styles.description}>
-                {item.description}
-              </Text>
-
-              <View style={styles.priceDetails}>
-                <Text style={styles.cost}>
-                  Cost: {formatRand(Number(item.cost))}
-                </Text>
-                <Text style={styles.cost}>
-                  Profit: {formatRand(
-                    Number(item.price) - Number(item.cost)
-                  )}
-                </Text>
-              </View>
-
-              <View style={styles.actionRow}>
-                <TouchableOpacity
-                  style={styles.editButton}
-                  onPress={() => openEditForm(item)}
-                  accessibilityRole="button"
-                  accessibilityLabel={`Edit ${item.name}`}
-                >
-                  <Text style={styles.editText}>Edit</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  style={styles.removeButton}
-                  onPress={() => confirmDelete(item)}
-                  accessibilityRole="button"
-                  accessibilityLabel={`Delete ${item.name}`}
-                >
-                  <Text style={styles.removeText}>Delete</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
+            <MenuItemCard
+              key={item.id}
+              item={item}
+              onEdit={openEditForm}
+              onDelete={confirmDelete}
+            /> 
           ))
         )}
 
@@ -796,92 +751,6 @@ const styles = StyleSheet.create({
   },
   secondaryButtonText: {
     color: '#6B3515',
-    fontWeight: '800',
-  },
-  dishCard: {
-    backgroundColor: '#FFFFFF',
-    padding: 16,
-    borderRadius: 14,
-    marginBottom: 13,
-    borderWidth: 1,
-    borderColor: '#E8D8C8',
-  },
-  dishTop: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    gap: 10,
-  },
-  dishHeading: {
-    flex: 1,
-  },
-  dishName: {
-    fontSize: 18,
-    fontWeight: '800',
-    color: '#3E2723',
-  },
-  courseBadge: {
-    color: '#79502E',
-    backgroundColor: '#F4E8DA',
-    fontSize: 11,
-    fontWeight: '700',
-    alignSelf: 'flex-start',
-    overflow: 'hidden',
-    borderRadius: 6,
-    paddingHorizontal: 9,
-    paddingVertical: 5,
-    marginTop: 8,
-  },
-  price: {
-    fontSize: 17,
-    fontWeight: '800',
-    color: '#6B3515',
-  },
-  description: {
-    color: '#75645A',
-    marginTop: 12,
-    marginBottom: 12,
-    lineHeight: 21,
-    fontSize: 14,
-  },
-  priceDetails: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    gap: 8,
-    marginBottom: 15,
-  },
-  cost: {
-    color: '#795548',
-    fontSize: 12,
-    fontWeight: '600',
-  },
-  actionRow: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    gap: 9,
-    borderTopWidth: 1,
-    borderTopColor: '#F0E7DF',
-    paddingTop: 12,
-  },
-  editButton: {
-    backgroundColor: '#EFE2D5',
-    paddingVertical: 9,
-    paddingHorizontal: 17,
-    borderRadius: 8,
-  },
-  editText: {
-    color: '#6B3515',
-    fontWeight: '800',
-  },
-  removeButton: {
-    backgroundColor: '#F9E8E5',
-    paddingVertical: 9,
-    paddingHorizontal: 17,
-    borderRadius: 8,
-  },
-  removeText: {
-    color: '#9D3026',
     fontWeight: '800',
   },
   backButton: {
