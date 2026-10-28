@@ -1,56 +1,88 @@
-# Welcome to your Expo app 👋
+Chef's Menu Manager
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Overview
 
-## Get started
+Chef's Menu Manager is a React Native application built with Expo and TypeScript. It helps users manage a restaurant menu by adding, viewing, editing, searching, filtering and deleting menu items.
 
-1. Install dependencies
+Features
 
-   ```bash
+- Add menu items: Enter a dish's name, description, cost, selling price and course.
+- Input validation: Validate required fields and numeric price and cost values.
+- Edit menu items: Update existing menu item details.
+- Delete menu items: Remove dishes from the menu.
+- Search: Find menu items by name.
+- Filter by course: Filter items by Starter, Main Course or Dessert.
+- Menu statistics: Display the total number of items, average selling price and number of items in each course.
+- User feedback: Provide feedback when input is invalid and when menu actions are performed.
+
+Technologies Used
+
+- React Native
+- Expo
+- TypeScript
+- Expo Router
+
+Changes Since Part 2
+
+The original Part 2 application supported adding and removing menu items. The application has since been enhanced with the following improvements:
+
+- Added functionality to edit and update existing menu items.
+- Added search functionality to find dishes by name.
+- Added course filters for Starter, Main Course and Dessert.
+- Added menu statistics, including total item count, average selling price and counts per course.
+- Improved form validation and user feedback.
+- Enhanced the interface to make menu management easier to use.
+
+Getting Started
+
+Prerequisites
+
+- Node.js and npm
+- Expo Go compatible with the project's Expo SDK, or a suitable development environment
+- Git (optional, for cloning the repository)
+
+Installation
+
+1. Clone the repository:
+   
+   git clone https://github.com/Epic-Sean1/ChefsMenuManager.git
+
+2. Navigate into the project folder:
+   
+   cd ChefsMenuManager
+
+3. Install the dependencies:
+   
    npm install
-   ```
 
-2. Start the app
-
-   ```bash
+4. Start the application:
+   
    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+5. Open the application using a compatible Expo Go version or a configured emulator.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Data Handling
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Menu items are managed in application state. Unless persistent storage is implemented separately, menu data may not remain available after the application is restarted.
 
-## Get a fresh project
+Project Repository
 
-When you're ready, run:
+"Chef's Menu Manager on GitHub" (https://github.com/Epic-Sean1/ChefsMenuManager)
 
-```bash
-npm run reset-project
-```
+Changelog
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Final Part — Enhancements
 
-### Other setup steps
+- Implemented menu item editing and updating.
+- Implemented search by dish name.
+- Implemented filtering by course.
+- Added menu statistics.
+- Improved validation and user feedback.
+- Refined the user interface.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Part 2 — Initial Application
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Implemented the initial menu management interface.
+- Added the ability to create and display menu items.
+- Added the ability to remove menu items.
+- Implemented basic input validation.s
